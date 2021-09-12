@@ -465,64 +465,24 @@
 // Вызов функции calculateTotal() со случайным числом возвращает правильное значение
 
 // function calculateTotal(number) {
+//  // Change code below this line
 
-
- // Change code below this line
-    // const numberArray = [];
-    // numberArray;
-//   let numberTotal = 0;
-//     for (let i = 0; i <= number.length; i += 1); {
-//         console.log(numberTotal.push(i));
-//         numberTotal += i;
-//   console.log(numberTotal);
-//     console.log(number);
-   
- 
-// }
-
-// function calculateTotal(number) {
-//  //   let total = 0;
-//     const maxNumber = Number(number);
-//     const array = [];
-//     let arrayNew;
-
-
-//     for (let i = 1; i <= maxNumber; i += 1); {
-//         // if i <= (number);
-//         arrayNew = array.push(i += 1);
-
-//         console.log(array);
-//         console.log(arrayNew);
-        
-
+//  const maxNumber = number;
+//     let element = 0;
+//     let arrayNumbers = [];
+//     let total = 0;
+  
+//     for (let i = 1; i <= maxNumber; i += 1) {
+//         if (i <= maxNumber) {
+//             element += 1;
+//             arrayNumbers.push(element);
+//         }
 //     }
+  
+//     for (const arrayNumber of arrayNumbers) {
+//         total += arrayNumber;
+//     }   
+//   return total;
 
-// // for (let i = 0; i <= number; i += 1); { // Change this line
-// //   console.log(i);
-// // total += i;
+//   // Change code above this line
 // }
-  // Change code above this line
-// }
-  // Change code above this line
-//  console.log(calculateTotal);
-// calculateTotal(24);
-
-
-function calculateTotal(x) {
-    const maxNumber = x;
-    let number;
-    let array = [];
-    for (let i = 0; i <= maxNumber; i += 1) {
-            array.push(number += 1);
- console.log(maxNumber);
-    // console.log(array);
-    }
-   
-
-    }
-    // for (let i = 0; i <= maxNumber; i += 1); {
-    //     array = array.push(i);
-
-    
-    // }
-calculateTotal(3);
