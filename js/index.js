@@ -1019,11 +1019,17 @@
 // }
 
 
-function includes(array, value) {
+// function includes(array, value) {
      
-}
+// }
 
-includes(["apple", "pear", "orange"], "plum");
- includes([1, 2, 3, 4, 5], 3);
-includes([1, 2, 4, 5], 3);
+// includes(["apple", "pear", "orange"], "plum");
+//  includes([1, 2, 3, 4, 5], 3);
+// includes([1, 2, 4, 5], 3);
         
+
+//2. Напишите программу, которая получит от пользователя
+//число (количество минут) и выведет в консоль
+//строку в формате часов и минут
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+// 70 === 01:10
