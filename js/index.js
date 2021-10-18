@@ -1,3 +1,47 @@
+const colorPalette = document.querySelector('.color-palette');
+const output = document.querySelector('.output');
+
+colorPalette.addEventListener('click', selectColor);
+
+// This is where delegation «magic» happens
+function selectColor(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  const selectedColor = event.target.dataset.color;
+  output.textContent = `Selected color: ${selectedColor}`;
+  output.style.color = selectedColor;
+}
+
+// Some helper functions to render palette items
+createPaletteItems();
+
+function createPaletteItems() {
+  const items = [];
+  for (let i = 0; i < 60; i++) {
+    const color = getRangomColor();
+    const item = document.createElement('button');
+    item.type = 'button';
+    item.dataset.color = color;
+    item.style.backgroundColor = color;
+    item.classList.add('item');
+    items.push(item);
+  }
+
+  colorPalette.append(...items);
+}
+
+function getRangomColor() {
+  return `#${getRandomHex()}${getRandomHex()}${getRandomHex()}`;
+}
+
+function getRandomHex() {
+  return Math.round(Math.random() * 256)
+    .toString(16)
+    .padStart(2, '0');
+}
+
 // // 01
 // // Запиши условие в инструкции if так, чтобы функция работала правильно.
 
@@ -9,7 +53,6 @@
 // // Вызов checkAge(38) возвращает "You are an adult"
 // // В теле функции есть только одна инструкция if
 // // В теле функции нет инструкции else или else if
-
 
 // function checkAge(age) {
 //   if (age >= 18) { // Change this line
@@ -31,7 +74,6 @@
 // // Вызов checkPassword("mangohackzor") возвращает "Access denied, wrong password!"
 // // Вызов checkPassword("polyhax") возвращает "Access denied, wrong password!"
 // // Вызов checkPassword("jqueryismyjam") возвращает "Welcome!"
-
 
 // function checkPassword(password) {
 //   const ADMIN_PASSWORD = "jqueryismyjam";
@@ -62,16 +104,15 @@
 // // Вызов checkStorage(150, 0) возвращает "Your order is empty!"
 // function checkStorage(available, ordered) {
 //   // Change code below this line
- 
+
 //   if (ordered === 0) {
 //     return "Your order is empty!";
-//   } 
+//   }
 //   if (ordered > available) {
 //     return "Your order is too large, not enough goods in stock!";
-//   } 
+//   }
 //     return "The order is accepted, our manager will contact you";
-   
-  
+
 //   // Change code above this line
 // }
 
@@ -174,14 +215,11 @@
 // // Объявлена переменная lastElement
 // // Значение переменной lastElement это строка "banana"
 
-
-
 // const fruits = ["apple", "peach", "pear", "banana"];
 // const lastElementIndex = fruits.length - 1;
 // const lastElement = fruits[lastElementIndex];
 
-
-   // 09
+// 09
 //     Крайние элементы массива
 // Задание
 // Напиши функцию getExtremeElements(array) которая принимает один параметр array - массив элементов произвольной длины. Функция должна возвращать массив из двух элементов - первого и последнего элемента параметра array.
@@ -220,7 +258,6 @@
 // Вызов splitMessage("Mango", "") возвращает ["M", "a", "n", "g", "o"]
 // Вызов splitMessage("best_for_week", "_") возвращает ["best", "for", "week"]
 
-
 // function splitMessage(message, delimeter) {
 //   let words;
 //   // Change code below this line
@@ -228,9 +265,6 @@
 //   // Change code above this line
 //   return words;
 // }
-
-
-
 
 // 11
 // Сервису гравировки украшений нужна функция, которая бы автоматически считала цену гравировки, в зависимости от количества слов и цены за слово.
@@ -246,7 +280,6 @@
 // Вызов calculateEngravingPrice("Web-development is creative work", 40) возвращает 160
 // Вызов calculateEngravingPrice("Web-development is creative work", 20) возвращает 80
 
-
 // function calculateEngravingPrice(message, pricePerWord) {
 //     let calculateEngravingPrice;
 // const calculateWords = message.split(" ").length;
@@ -254,7 +287,7 @@
 //   console.log(calculateEngravingPrice);
 // return calculateEngravingPrice;
 // }
-  
+
 // 12
 // Метод массива join()
 // Метод массивов join(delimeter) позволяет соединить элементы массива в строку. В строке элементы будут разделены символом или группой символов указанных в delimeter. То есть это операция обратная методу строк split(delimeter).
@@ -272,8 +305,6 @@
 // Вызов makeStringFromArray(["M", "a", "n", "g", "o"], "")) возвращает "Mango"
 // Вызов makeStringFromArray(["top", "picks", "for", "you"], "_") возвращает "top_picks_for_you"
 
-
-
 // function makeStringFromArray(array, delimeter) {
 //   let string;
 //   // Change code below this line
@@ -282,10 +313,9 @@
 
 //   // Change code above this line
 //     return string;
-    
+
 // }
 // makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ")
-
 
 // 13
 // генератор slug
@@ -315,7 +345,7 @@
 //     const stringToArray = normalazedString.split(" ").join("-");
 
 //   console.log(stringToArray);
-  
+
 // return stringToArray;
 // }
 
@@ -374,7 +404,6 @@
 
 // const allClients = oldClients.concat(newClients); // Change this line
 
-
 // 16
 // Задание
 // Напиши функцию makeArray(firstArray, secondArray, maxLength) для создания нового массива со всеми элементами двух исходных firstArray и secondArray. Параметр maxLength содержит максимально допустимую длину нового массива.
@@ -410,7 +439,6 @@
 // }
 // makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3);
 // makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4);
-
 
 // 17
 // Цикл for
@@ -466,7 +494,7 @@
 
 // function calculateTotal(number) {
 //     let total = 0;
-  
+
 //     for (let i = 0; i <= number; i += 1) {
 //         total += i;
 //     }
@@ -481,14 +509,14 @@
 //     let element = 0;
 //     const arrayNumbers = [];
 //     let total = 0;
-  
+
 //     for (let i = 1; i <= maxNumber; i += 1) {
 //         if (i <= maxNumber) {
 //             element += 1;
 //             arrayNumbers.push(element);
 //         }
 //     }
-  
+
 //     for (const arrayNumber of arrayNumbers) {
 //         total += arrayNumber;
 //     }
@@ -498,7 +526,6 @@
 //   // Change code above this line
 // }
 // calculateTotal(7)
-
 
 // 19
 // Итерация по массиву
@@ -530,7 +557,6 @@
 //   const fruit = fruits[i]; // Change this line
 //   console.log(fruit);
 // }
-
 
 // 20
 // Задача: подсчёт суммы покупки
@@ -579,13 +605,12 @@
 //         if (wordLengthMax.length < array[i].length) {
 //             wordLengthMax = array[i];
 //        }
-//     }   
+//     }
 //                  console.log(wordLengthMax);
 
 //             return wordLengthMax;
 // }
 // findLongestWord("The quick brown fox jumped over the lazy dog");
-   
 
 // 22
 // Метод push()
@@ -610,7 +635,7 @@
 // function createArrayOfNumbers(min, max) {
 //   const numbers = [];
 //   // Change code below this line
- 
+
 //   for (let i = min; i <= max; i += 1) {
 //     numbers.push(i);
 //        }
@@ -639,7 +664,7 @@
 
 // function filterArray(numbers, value) {
 //     let numbersNew = [];
-   
+
 //     for (let i = 0; i < numbers.length; i += 1) {
 //         if (numbers[i] > value) {
 //             numbersNew.push(numbers[i]);
@@ -650,7 +675,7 @@
 // }
 // filterArray([1, 2, 3, 4, 5], 3)
 
-  // Change code above this line
+// Change code above this line
 
 //   24
 // Метод includes()
@@ -704,7 +729,7 @@
 // Вызов getCommonElements([1, 2, 3], [10, 20, 30]) возвращает []
 // Вызов функции getCommonElements() со случайными двумя массивами возвращает правильный массив
 // В цикле for использовались методы includes и push
-         
+
 //     function getCommonElements(array1, array2) {
 //         let arrayNew = [];
 
@@ -718,7 +743,6 @@
 //     }
 // getCommonElements([1, 2, 3], [2, 4])
 //     getCommonElements([1, 2, 3], [2, 1, 17, 19])
-
 
 // 26
 // Цикл for...of
@@ -985,7 +1009,6 @@
 // findNumber(2, 6, 5)
 // findNumber(8, 17, 3)
 
-
 // 32
 // Задача: функция includes()
 // Задание
@@ -1018,15 +1041,13 @@
 
 // }
 
-
 // function includes(array, value) {
-     
+
 // }
 
 // includes(["apple", "pear", "orange"], "plum");
 //  includes([1, 2, 3, 4, 5], 3);
 // includes([1, 2, 4, 5], 3);
-        
 
 //2. Напишите программу, которая получит от пользователя
 //число (количество минут) и выведет в консоль
