@@ -1,3 +1,13 @@
+// const dataFormResult = {};
+//   const formData = new FormData(event.currentTarget);
+
+//   formData.forEach((value, name) => {
+//     dataFormResult[name] = value;
+//   });
+
+//   console.log(dataFormResult);
+
+
 const colorPalette = document.querySelector('.color-palette');
 const output = document.querySelector('.output');
 
