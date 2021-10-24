@@ -1,3 +1,42 @@
+// вариант основа Modal
+
+//  let instance = '';
+// const options = {
+//   once: true,
+//   onShow: instance => {
+//     console.log('open');
+//     window.addEventListener('keydown', eventHandler);
+//     console.log('addEventListener');
+//   },
+
+//   onClose: instance => {
+//     console.log('close');
+//     window.removeEventListener('keydown', eventHandler);
+//     console.log('removeEventListener');
+//   },
+// };
+// function eventHandler(e) {
+//   if (e.key === 'Escape') {
+//     console.log('key', e.key);
+//     instance.close();
+//     return;
+//   }
+// }
+// // вариант с модалкой  - 1 рабочий, все слушатели снимаются (по идее)
+// function onModalOpen(e) {
+//   e.preventDefault();
+//   if (e.target.nodeName !== 'IMG') {
+//     return;
+//   }
+//   const url = getImageUrl(e.target);
+//   instance = basicLightbox.create(
+//     `<img src="${url}" width="800" height="600">`,
+//     options,
+//   );
+//   // вешаем слушателей на клик и на esc при октрытии модалки
+//   instance.show();
+// }
+
 // const dataFormResult = {};
 //   const formData = new FormData(event.currentTarget);
 
@@ -6,7 +45,6 @@
 //   });
 
 //   console.log(dataFormResult);
-
 
 const colorPalette = document.querySelector('.color-palette');
 const output = document.querySelector('.output');
